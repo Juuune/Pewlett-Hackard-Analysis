@@ -1,4 +1,4 @@
--- Challemge 
+-- Technical Analysis Deliverable 1:
 --Number of Retiring Employees by title 
 SELECT e.emp_no,
 	e.last_name,
@@ -39,3 +39,40 @@ FROM
  FROM retirees_title_all) tmp
 WHERE tmp.rn = 1
 ORDER BY emp_no;
+-- Number of retirees for each title 
+SELECT title,
+	   count(emp_no)
+INTO number_retirees_title
+FROM retirees_title_unique
+GROUP BY title
+ORDER BY title DESC;
+--Number of employees for each title 
+SELECT title,
+	   count(emp_no)
+INTO number_employees_title
+FROM titles 
+WHERE (to_date='9999-01-01')
+GROUP BY title
+ORDER BY title DESC;
+
+-- Technical Analysis Deliverable 2:
+-- List of employees eligable for mentoship program
+SELECT e.emp_no,
+       e.first_name,
+	   e.last_name,
+	   ti.title,
+	   ti.from_date,
+	   ti.to_date
+INTO mentorship_eligibility
+FROM employees as e
+INNER JOIN titles as ti
+ON e.emp_no = ti.emp_no
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+AND (ti.to_date ='9999-01-01')
+ORDER BY e.emp_no ;
+-- number of mentor  
+SELECT count(emp_no)
+FROM mentorship_eligibility;
+--number of retirees
+SELECT count(emp_no)
+FROM retirees_title_unique
