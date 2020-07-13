@@ -16,9 +16,6 @@ ON (e.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY e.emp_no;
 
---CHeck the table 
-SELECT*FROM retirees_title_all
-
 -- Partition the data to show only most recent title per employee
 SELECT emp_no,
 	first_name,
