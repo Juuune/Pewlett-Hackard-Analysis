@@ -10,7 +10,7 @@
 - For this analysis, we created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title, with following information. 
 - Employee number, first and last name, tItle, from_date, salary
 - To get all the columns  the number of roles need to be filled, we need to reference 3 tables - Employee, Titles, Salaries. ERD shows the relationsip between original database for 6 tables. 
-![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
+![ERD](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
 - SELECT e.emp_no,
 	    e.last_name,
 	    e.first_name,
@@ -71,7 +71,7 @@ Now we can create another table to calculate numer of retiress by title by selec
 ## Mentorship Eligibility
 - To be eligible to participate in the mentorship program, employees will need to have a date of birth that falls between January 1, 1965 and December 31, 1965. 
 Mentorship eligibility table would include following information ; employee number, first and last name, title, from date and to date
-![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
+![ERD](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
 - According to ERD we've created earlier, we need to reference 2 table with inner join. If we use code below to select columns from 2 table and inner join then the result table would have duplication. 
 - SELECT e.emp_no,
        e.first_name,
@@ -100,5 +100,5 @@ Mentorship eligibility table would include following information ; employee numb
 - PH is about to loose 1/3 of its employees by silver tsunami and there's only 1549 of current employees is eligibable for mentorship role. Especially engineer and assistant engineer would loose half of its workforce. 
 - In order to conduct a detailed plan we need to calculate how many roles of each department is retiring. (using 'current_retirees_title' and 'department')
 - We can also caculate the sum of current salaries of retirees to mesure the impact on HR expense.   
-![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
+![ERD](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
 
