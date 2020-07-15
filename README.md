@@ -10,7 +10,7 @@
 - For this analysis, we created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title, with following information. 
 - Employee number, first and last name, tItle, from_date, salary
 - To get all the columns  the number of roles need to be filled, we need to reference 3 tables - Employee, Titles, Salaries. ERD shows the relationsip between original database for 6 tables. 
-- ERD url
+![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
 - SELECT e.emp_no,
 	    e.last_name,
 	    e.first_name,
@@ -55,7 +55,7 @@ In order to find duplicates we face two problems:
  FROM retirees_title_all) tmp
  WHERE tmp.rn = 1
  ORDER BY emp_no;
-- table example 
+![current_retirees_title example](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/Challenge/current_retirees_title_example.PNG)
 - After adjust our code new table current_retirees_title will contain all the information we need without duplication. 
 Now we can create another table to calculate numer of retiress by title by selecting columns from this table and count(emp_no) function. 
 - SELECT title,
@@ -65,12 +65,13 @@ Now we can create another table to calculate numer of retiress by title by selec
  WHERE (to_date='9999-01-01')
  GROUP BY title
  ORDER BY title DESC;
-- table exmp 1
-- table exmp 2
+![Number of employees by Title](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/Challenge/num_employees_title.PNG)
+![Number of retirees by Title](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/Challenge/num_retirees_tilte.PNG)
 
 ## Mentorship Eligibility
 - To be eligible to participate in the mentorship program, employees will need to have a date of birth that falls between January 1, 1965 and December 31, 1965. 
 Mentorship eligibility table would include following information ; employee number, first and last name, title, from date and to date
+![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
 - According to ERD we've created earlier, we need to reference 2 table with inner join. If we use code below to select columns from 2 table and inner join then the result table would have duplication. 
 - SELECT e.emp_no,
        e.first_name,
@@ -88,7 +89,7 @@ Mentorship eligibility table would include following information ; employee numb
 - To solve this problem, we can use 'WHERE' fuction to choose employees whose to-date is set to 9999-01-01. Then the result would contain employees whose title is current status. 
 -  WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
    AND (ti.to_date ='9999-01-01')
-- table example 
+![Mentorship Eligibility example](https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/Challenge/mentorship_example.PNG)
 
 # Summary and Conclusion 
 - Summary of the results:
@@ -97,4 +98,7 @@ Mentorship eligibility table would include following information ; employee numb
 -3) Total number of individuals available for mentorship role : 1549
 
 - PH is about to loose 1/3 of its employees by silver tsunami and there's only 1549 of current employees is eligibable for mentorship role. Especially engineer and assistant engineer would loose half of its workforce. 
-- In order to conduct a detailed plan we need to calculate how many roles of each department is retiring and cacculate the sum of current salaries of retirees to mesure the impact on HR expense.   
+- In order to conduct a detailed plan we need to calculate how many roles of each department is retiring. (using 'current_retirees_title' and 'department')
+- We can also caculate the sum of current salaries of retirees to mesure the impact on HR expense.   
+![ERD] [https://github.com/Juuune/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png]
+
