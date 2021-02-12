@@ -1,9 +1,11 @@
-# Overview of Pewlett-Hackard(PH)-Analysis
-- Analysis on Pewlett-Hackard HR data with SQL Database (pgAdmin4)
+# Overview 
+## Background and goal of Pewlett-Hackard(PH)-Analysis
+- Pewlett-Hackard is a virtual tech company who is facing “silver tsunami” in near future cause of baby boomer's retirements. The HR team of PH would like to know how many roles will need to be filled as the “silver tsunami” begins to make an impact. They would also like to identify retirement-ready employees who qualify to mentor the next generation of Pewlett Hackard employees.
+## Techniques used 
+- PostgreSQL with pgAdmin4
+- VSCode
 - ERD created with quickdatabasediagrams.com
 
-# Background and goal 
-- Pewlett-Hackard is a virtual tech company who is facing “silver tsunami” in near future cause of baby boomer's retirements. The HR team of PH would like to know how many roles will need to be filled as the “silver tsunami” begins to make an impact. They would also like to identify retirement-ready employees who qualify to mentor the next generation of Pewlett Hackard employees.
 
 # Analysis 
 ## Number of Retiring Employees by Title
